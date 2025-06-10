@@ -71,6 +71,8 @@ class AppConstants {
 
   /// locales
   static const String localeCodeEn = 'en';
+  static const String chatGpt =
+      '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';
 
   /// location
   static const double demoLatitude = 41.304223;
