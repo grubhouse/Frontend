@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>801072125681-t7t659c1sojjbkmvvasqhehpupecq99e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.801072125681-t7t659c1sojjbkmvvasqhehpupecq99e</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>801072125681-241v116ushohmlql8ge6iobrfc3kjctg.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAonqkygzEr-wY7e0okt5uJbPjYlm7iBH8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>801072125681</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.grubhouse.customerapp</string>
+	<key>PROJECT_ID</key>
+	<string>grubhouse-bea37</string>
+	<key>STORAGE_BUCKET</key>
+	<string>grubhouse-bea37.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:801072125681:ios:501498edb4b15c54f07b50</string>
+	<key>DATABASE_URL</key>
+	<string>https://grubhouse-bea37-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
