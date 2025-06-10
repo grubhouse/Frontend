@@ -1,0 +1,275 @@
+{
+  "project_info": {
+    "project_number": "801072125681",
+    "firebase_url": "https://grubhouse-bea37-default-rtdb.firebaseio.com",
+    "project_id": "grubhouse-bea37",
+    "storage_bucket": "grubhouse-bea37.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801072125681:android:8c5346b780a7a471f07b50",
+        "android_client_info": {
+          "package_name": "com.grubhouse.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801072125681-7o65ba9rtshlbuv4avig4pl9nj067shi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customer",
+            "certificate_hash": "e998f8669a570ec367eb7116a963b1173c99b957"
+          }
+        },
+        {
+          "client_id": "801072125681-gqjmc7nht3m01ehltuv5idomlsn9h60q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customer",
+            "certificate_hash": "2d077da2a44affffa58859ba99b1468a7eefe79b"
+          }
+        },
+        {
+          "client_id": "801072125681-no5s2hdc4ui44k8o7u8a9ckmah0va9nb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customer",
+            "certificate_hash": "d5d23cb24b468f777c27658659cc67454efbc9e3"
+          }
+        },
+        {
+          "client_id": "801072125681-brhf3p15rllp9na85eet1obbbpbbll38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrO0PofWsvgvHHf6eq8DS4mRedxwa5YsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801072125681-brhf3p15rllp9na85eet1obbbpbbll38.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "801072125681-20m20aar197qd3p2jc35tup64jqrra3e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.grubhouse.customerapp2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801072125681:android:3e6c3e71428142fdf07b50",
+        "android_client_info": {
+          "package_name": "com.grubhouse.customerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801072125681-2lptiu01lsrcc49p34fvt4p8lod98r73.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp",
+            "certificate_hash": "2725981fbdc018667c2728290f5e35d10eb6eb08"
+          }
+        },
+        {
+          "client_id": "801072125681-5ni434uu828vv3hpp32a9vdns7pq23hc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp",
+            "certificate_hash": "99302fc2533805ca76381191b97d221586cfa86d"
+          }
+        },
+        {
+          "client_id": "801072125681-9adar2nf6srcad3tab3uh1u6doo37av6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp",
+            "certificate_hash": "daaeb8de73c2a56fd288923317977ec3a47e19f7"
+          }
+        },
+        {
+          "client_id": "801072125681-a0v5sdis5d1onm27h9gj535dh7jscqmo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp",
+            "certificate_hash": "bc0c692e0e0fd543794876e5586a397bd78f852e"
+          }
+        },
+        {
+          "client_id": "801072125681-d7lo9rpgatcigp0f7edumq2ni6dnbd66.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp",
+            "certificate_hash": "bc30852b86c5d6c39abb28046d50c957740c9167"
+          }
+        },
+        {
+          "client_id": "801072125681-brhf3p15rllp9na85eet1obbbpbbll38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrO0PofWsvgvHHf6eq8DS4mRedxwa5YsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801072125681-brhf3p15rllp9na85eet1obbbpbbll38.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "801072125681-20m20aar197qd3p2jc35tup64jqrra3e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.grubhouse.customerapp2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801072125681:android:bcd21d4255359c7cf07b50",
+        "android_client_info": {
+          "package_name": "com.grubhouse.customerapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801072125681-335obeaf642u4ogqck6k9fgjaidk45v6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp2",
+            "certificate_hash": "bc0c692e0e0fd543794876e5586a397bd78f852e"
+          }
+        },
+        {
+          "client_id": "801072125681-fn6gvdlfbddbp9qoqjv3crqs2jbqdd8h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp2",
+            "certificate_hash": "974d265a30da4376c6fcad38f291b17dcad39e66"
+          }
+        },
+        {
+          "client_id": "801072125681-hhfomd135er1icli1874c5h62ulpnhup.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp2",
+            "certificate_hash": "bc30852b86c5d6c39abb28046d50c957740c9167"
+          }
+        },
+        {
+          "client_id": "801072125681-it2vdsq7l9bkp6ejobknpqmiclob10s4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp2",
+            "certificate_hash": "99302fc2533805ca76381191b97d221586cfa86d"
+          }
+        },
+        {
+          "client_id": "801072125681-pn0f88mu7be5flu9g5r0e163ntove3e3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp2",
+            "certificate_hash": "2725981fbdc018667c2728290f5e35d10eb6eb08"
+          }
+        },
+        {
+          "client_id": "801072125681-brhf3p15rllp9na85eet1obbbpbbll38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrO0PofWsvgvHHf6eq8DS4mRedxwa5YsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801072125681-brhf3p15rllp9na85eet1obbbpbbll38.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "801072125681-20m20aar197qd3p2jc35tup64jqrra3e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.grubhouse.customerapp2"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801072125681:android:8839efa3a90f5334f07b50",
+        "android_client_info": {
+          "package_name": "com.grubhouse.customerapp3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801072125681-241v116ushohmlql8ge6iobrfc3kjctg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp3",
+            "certificate_hash": "853ad3d01a98a4035f5d01d720abf6c6a8b7e560"
+          }
+        },
+        {
+          "client_id": "801072125681-9fo1119dojl8o8ncvpqu33c66gkoos3r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.grubhouse.customerapp3",
+            "certificate_hash": "974d265a30da4376c6fcad38f291b17dcad39e66"
+          }
+        },
+        {
+          "client_id": "801072125681-brhf3p15rllp9na85eet1obbbpbbll38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrO0PofWsvgvHHf6eq8DS4mRedxwa5YsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "801072125681-brhf3p15rllp9na85eet1obbbpbbll38.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "801072125681-20m20aar197qd3p2jc35tup64jqrra3e.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.grubhouse.customerapp2"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
