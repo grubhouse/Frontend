@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_remix/flutter_remix.dart';
@@ -93,7 +95,9 @@ class _RatingPageState extends ConsumerState<RatingPage> {
             12.verticalSpace,
             OutlinedBorderTextField(
               textController: textEditingController,
-              label: AppHelpers.getTranslation(TrKeys.comment).toUpperCase(),
+              label: AppHelpers.getTranslation(TrKeys.comment).toUpperCase(), validator: (value) {
+                return null;
+                },
             ),
             24.verticalSpace,
             RatingBar.builder(
@@ -206,7 +210,9 @@ class _RatingPageState extends ConsumerState<RatingPage> {
                   inputFormatters: [InputFormatter.currency],
                   onChanged: (s) {
                     price = double.tryParse(s) ?? 0;
-                  },
+                  }, validator: (value) {
+                    return null;
+                    },
                 ),
               ),
             40.verticalSpace,
@@ -242,6 +248,8 @@ class _RatingPageState extends ConsumerState<RatingPage> {
                                         ref
                                             .read(parcelProvider.notifier)
                                             .addReview(
+                                                // ignore: duplicate_ignore
+                                                // ignore: use_build_context_synchronously
                                                 context,
                                                 textEditingController.text,
                                                 rating);

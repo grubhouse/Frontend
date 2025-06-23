@@ -377,7 +377,6 @@ class ProductNotifier extends StateNotifier<ProductState> {
   }
 
   generateShareLink(String? shopType, int? shopId) async {
-    print("weburl: ${AppConstants.webUrl}");
     final productLink =
         '${AppConstants.webUrl}/shop/$shopId?product=${state.productData?.uuid}/';
 

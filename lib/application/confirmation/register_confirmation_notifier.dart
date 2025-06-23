@@ -40,7 +40,6 @@ class RegisterConfirmationNotifier
       {required BuildContext context,
       required String verificationId,
       VoidCallback? onSuccess}) async {
-    print("hereaaaa");
     final connected = await AppConnectivity.connectivity();
     if (connected) {
       state = state.copyWith(isLoading: true, isSuccess: false);
@@ -192,7 +191,6 @@ class RegisterConfirmationNotifier
 
   Future<void> resendConfirmation(BuildContext context, String email,
       {bool isResetPassword = false}) async {
-    print("emaill: $email");
     final connected = await AppConnectivity.connectivity();
     if (connected) {
       state = state.copyWith(isResending: true);
@@ -228,7 +226,6 @@ class RegisterConfirmationNotifier
 
   Future<void> sendCodeToNumber(
       BuildContext context, String phoneNumber, String countryCode) async {
-    print("emaill: $phoneNumber");
     final connected = await AppConnectivity.connectivity();
     if (connected) {
       state = state.copyWith(isResending: true);

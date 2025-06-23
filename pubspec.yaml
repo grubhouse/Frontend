@@ -14,7 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   dio: ^5.4.1
   http: ^0.13.0
-  intl: ^0.19.0
+  intl: ^0.20.2
   get_it: ^7.6.7
   location: ^5.0.3
   geocoding: ^2.1.1
@@ -87,6 +87,9 @@ dependencies:
 dependency_overrides:
   http:
 dev_dependencies:
+# critical for testing. Add this section if missing ---
+  integration_test:
+    sdk: flutter
   flutter_test:
     sdk: flutter
   freezed: ^2.4.7

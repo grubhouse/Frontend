@@ -7,7 +7,6 @@ import '../../../../application/splash/splash_provider.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import '../../../../infrastructure/services/app_constants.dart';
-import '../../auth/reset/set_password_page.dart';
 
 @RoutePage()
 class SplashPage extends ConsumerStatefulWidget {

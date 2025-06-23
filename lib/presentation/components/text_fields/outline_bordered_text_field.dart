@@ -45,7 +45,7 @@ class OutlinedBorderTextField extends StatelessWidget {
     this.textInputAction,
     this.inputFormatters,
     this.hint,
-    this.prefixIcon,
+    this.prefixIcon, required String? Function(dynamic value) validator,
   });
 
   @override

@@ -168,7 +168,9 @@ class _EditRestaurantState extends ConsumerState<CreateShopPage> {
                                             child: OutlinedBorderTextField(
                                               textController: shopName,
                                               label: AppHelpers.getTranslation(
-                                                  TrKeys.restaurantName),
+                                                  TrKeys.restaurantName), validator: (value) {
+                                                    return null;
+                                                    },
                                             ),
                                           ),
                                         ],
@@ -177,14 +179,18 @@ class _EditRestaurantState extends ConsumerState<CreateShopPage> {
                                       OutlinedBorderTextField(
                                         textController: descName,
                                         label: AppHelpers.getTranslation(
-                                            TrKeys.description),
+                                            TrKeys.description), validator: (value) {
+                                              return null;
+                                              },
                                       ),
                                       24.verticalSpace,
                                       OutlinedBorderTextField(
                                         textController: phoneName,
                                         inputType: TextInputType.phone,
                                         label: AppHelpers.getTranslation(
-                                            TrKeys.phoneNumber),
+                                            TrKeys.phoneNumber), validator: (value) {
+                                              return null;
+                                              },
                                       ),
                                       24.verticalSpace,
                                       OutlinedBorderTextField(
@@ -194,7 +200,9 @@ class _EditRestaurantState extends ConsumerState<CreateShopPage> {
                                             TrKeys.tax),
                                         inputFormatters: [
                                           InputFormatter.currency
-                                        ],
+                                        ], validator: (value) {
+                                          return null;
+                                          },
                                       ),
                                       24.verticalSpace,
                                       DropdownButtonFormField(
@@ -247,7 +255,9 @@ class _EditRestaurantState extends ConsumerState<CreateShopPage> {
                                             TrKeys.deliveryTimeFrom),
                                         inputFormatters: [
                                           InputFormatter.digitsOnly
-                                        ],
+                                        ], validator: (value) {
+                                          return null;
+                                          },
                                       ),
                                       24.verticalSpace,
                                       OutlinedBorderTextField(
@@ -257,7 +267,9 @@ class _EditRestaurantState extends ConsumerState<CreateShopPage> {
                                             TrKeys.deliveryTimeTo),
                                         inputFormatters: [
                                           InputFormatter.digitsOnly
-                                        ],
+                                        ], validator: (value) {
+                                          return null;
+                                          },
                                       ),
                                       24.verticalSpace,
                                       OutlinedBorderTextField(
@@ -267,7 +279,9 @@ class _EditRestaurantState extends ConsumerState<CreateShopPage> {
                                             TrKeys.startPrice),
                                         inputFormatters: [
                                           InputFormatter.currency
-                                        ],
+                                        ], validator: (value) {
+                                          return null;
+                                          },
                                       ),
                                       24.verticalSpace,
                                       OutlinedBorderTextField(
@@ -277,7 +291,9 @@ class _EditRestaurantState extends ConsumerState<CreateShopPage> {
                                             TrKeys.pricePerKm),
                                         inputFormatters: [
                                           InputFormatter.currency
-                                        ],
+                                        ], validator: (value) {
+                                          return null;
+                                          },
                                       ),
                                     ],
                                   ),

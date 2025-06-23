@@ -43,53 +43,67 @@ class NetworkExceptions with _$NetworkExceptions {
 
   const factory NetworkExceptions.unexpectedError() = UnexpectedError;
 
-  static NetworkExceptions getDioException(error) {
+  static NetworkExceptions getDioException(dynamic error) {
     if (error is Exception) {
       try {
         if (error is DioException) {
           switch (error.type) {
+            // --- All cases are now handled ---
             case DioExceptionType.cancel:
-              break;
+              return const NetworkExceptions.requestCancelled();
             case DioExceptionType.connectionTimeout:
-              break;
-            case DioExceptionType.unknown:
-              break;
+              return const NetworkExceptions.requestTimeout();
+            case DioExceptionType.sendTimeout:
+              return const NetworkExceptions.sendTimeout();
             case DioExceptionType.receiveTimeout:
-              break;
+              return const NetworkExceptions.requestTimeout();
+
             case DioExceptionType.badResponse:
               switch (error.response!.statusCode) {
                 case 400:
-                  break;
+                  return const NetworkExceptions.badRequest();
                 case 401:
-                  break;
+                  return const NetworkExceptions.unauthorisedRequest();
                 case 403:
-                  break;
+                  return const NetworkExceptions.unauthorisedRequest();
                 case 404:
-                  break;
-                case 409:
-                  break;
+                  return NetworkExceptions.notFound(
+                      error.response?.statusMessage ?? "Not Found");
                 case 408:
-                  break;
+                  return const NetworkExceptions.requestTimeout();
+                case 409:
+                  return const NetworkExceptions.conflict();
+                case 422:
+                   return const NetworkExceptions.unableToProcess();
                 case 500:
-                  break;
+                  return const NetworkExceptions.internalServerError();
                 case 503:
-                  break;
+                  return const NetworkExceptions.serviceUnavailable();
                 default:
+                  var responseCode = error.response!.statusCode;
+                  return NetworkExceptions.defaultError(
+                    "Received invalid status code: $responseCode",
+                  );
               }
-              break;
-            case DioExceptionType.sendTimeout:
-              break;
+
+            case DioExceptionType.unknown:
+              // Handles cases where there's no internet connection
+              if (error.error is SocketException) {
+                return const NetworkExceptions.noInternetConnection();
+              }
+              return const NetworkExceptions.unexpectedError();
+              
             case DioExceptionType.badCertificate:
-              // TODO: Handle this case.
-              break;
+              return const NetworkExceptions.unauthorisedRequest();
+
             case DioExceptionType.connectionError:
-              // TODO: Handle this case.
-              break;
+              return const NetworkExceptions.noInternetConnection();
           }
         } else if (error is SocketException) {
+          return const NetworkExceptions.noInternetConnection();
         } else {
+          return const NetworkExceptions.unexpectedError();
         }
-        return const NetworkExceptions.noInternetConnection();
       } on FormatException catch (_) {
         return const NetworkExceptions.formatException();
       } catch (_) {
@@ -103,86 +117,18 @@ class NetworkExceptions with _$NetworkExceptions {
       }
     }
   }
-
+  
+  // This method is now redundant since the information can be derived from getDioException,
+  // but I've completed it as requested.
   static int getDioStatus(error) {
     if (error is Exception) {
-      try {
-        int? status;
-        if (error is DioException) {
-          switch (error.type) {
-            case DioExceptionType.cancel:
-              status = 500;
-              break;
-            case DioExceptionType.connectionTimeout:
-              status = 500;
-              break;
-            case DioExceptionType.unknown:
-              status = 500;
-              break;
-            case DioExceptionType.receiveTimeout:
-              status = 500;
-              break;
-            case DioExceptionType.badResponse:
-              switch (error.response!.statusCode) {
-                case 400:
-                  status = 400;
-                  break;
-                case 401:
-                  status = 401;
-                  break;
-                case 403:
-                  status = 403;
-                  break;
-                case 404:
-                  status = 404;
-                  break;
-                case 409:
-                  status = 409;
-                  break;
-                case 422:
-                  status = 422;
-                  break;
-                case 408:
-                  status = 408;
-                  break;
-                case 500:
-                  status = 500;
-                  break;
-                case 503:
-                  status = 503;
-                  break;
-                default:
-                  status = 500;
-              }
-              break;
-            case DioExceptionType.sendTimeout:
-              status = 500;
-              break;
-            case DioExceptionType.badCertificate:
-              // TODO: Handle this case.
-              break;
-            case DioExceptionType.connectionError:
-              // TODO: Handle this case.
-              break;
-          }
-        } else if (error is SocketException) {
-          status = 500;
-        } else {
-          status = 500;
+      if (error is DioException) {
+        if (error.response != null) {
+          return error.response!.statusCode ?? 500;
         }
-        return status ?? 500;
-      } on FormatException catch (_) {
-        return 500;
-      } catch (_) {
-        return 500;
-      }
-    } else {
-      if (error.toString().contains("is not a subtype of")) {
-        return 500;
-      } else {
-        return 500;
       }
     }
+    return 500; // Default to 500 for non-dio errors or unknown cases
   }
 
   static String getErrorMessage(NetworkExceptions networkExceptions) {
@@ -204,7 +150,8 @@ class NetworkExceptions with _$NetworkExceptions {
         errorMessage = "Service unavailable";
       },
       methodNotAllowed: () {
-        errorMessage = "Method Allowed";
+        // Corrected typo from "Allowed" to "Not Allowed"
+        errorMessage = "Method Not Allowed";
       },
       badRequest: () {
         errorMessage = "Bad request";
@@ -234,7 +181,7 @@ class NetworkExceptions with _$NetworkExceptions {
         errorMessage = error;
       },
       formatException: () {
-        errorMessage = "Unexpected error occurred";
+        errorMessage = "Unexpected error occurred (Format Exception)";
       },
       notAcceptable: () {
         errorMessage = "Not acceptable";

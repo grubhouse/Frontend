@@ -694,7 +694,6 @@ class ShopOrderNotifier extends StateNotifier<ShopOrderState> {
     final productLink =
         "${AppConstants.webUrl}/group/${state.cart?.shopId}?g=${state.cart?.id}&o=${state.cart?.ownerId}&t=${type ?? 'shop'}";
 
-    print("weburl: $productLink");
 
     const dynamicLink =
         'https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=${AppConstants.firebaseWebKey}';
@@ -721,8 +720,6 @@ class ShopOrderNotifier extends StateNotifier<ShopOrderState> {
       }
     };
 
-    print("datashare: $dataShare");
-    print("dynamicLink: $dynamicLink");
     final res =
         await http.post(Uri.parse(dynamicLink), body: jsonEncode(dataShare));
 

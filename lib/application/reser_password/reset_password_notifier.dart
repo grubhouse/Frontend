@@ -1,3 +1,5 @@
+// ignore_for_file: dead_code, unnecessary_brace_in_string_interps
+
 import 'dart:async';
 import 'dart:developer';
 
@@ -67,7 +69,6 @@ class ResetPasswordNotifier extends StateNotifier<ResetPasswordState> {
         return;
       }
       log("TAG Code :${state.countryCode + state.email.trim()}");
-      print("TAG Code :${state.countryCode + state.email.trim()}");
       // ✅ Step 1: Check if the phone number exists in Firebase or database
       /*  bool phoneExists = await checkIfPhoneNumberExists((state.countryCode??"+44") + state.email.trim());
 
@@ -81,7 +82,7 @@ class ResetPasswordNotifier extends StateNotifier<ResetPasswordState> {
       }
       return;*/
       await FirebaseAuth.instance.verifyPhoneNumber(
-        phoneNumber: (state.countryCode ?? "+44") + state.email.trim(),
+        phoneNumber: (state.countryCode) + state.email.trim(),
         verificationCompleted: (PhoneAuthCredential credential) {
           log("TAG Auth Completed ${credential}");
         },
@@ -98,9 +99,9 @@ class ResetPasswordNotifier extends StateNotifier<ResetPasswordState> {
           log("TAG Here is the code Sent $verificationId $resendToken");
           SharedPreferences prefs = await SharedPreferences.getInstance();
           await prefs.setBool('reset_password_pending', true);
-          await prefs.setString('reset_phone', state.phone ?? "");
+          await prefs.setString('reset_phone', state.phone);
           await prefs.setString(
-              'reset_verificationId', state.verificationId ?? "");
+              'reset_verificationId', verificationId);
           await prefs.setBool('reset_isLoading', state.isLoading);
           await prefs.setBool('reset_isSuccess', state.isSuccess);
           state = state.copyWith(
@@ -123,11 +124,13 @@ class ResetPasswordNotifier extends StateNotifier<ResetPasswordState> {
     final connected = await AppConnectivity.connectivity();
     if (connected) {
       state = state.copyWith(isLoading: true, isSuccess: false);
+      // ignore: unused_local_variable
       bool phoneExists = await checkIfEmailAddressExists(state.email.trim());
 
       if (false) {
         state = state.copyWith(isLoading: false, isSuccess: false);
         AppHelpers.showCheckTopSnackBar(
+          // ignore: use_build_context_synchronously
           context,
           "Email Address not found. Please register first.",
         );
@@ -213,12 +216,10 @@ class ResetPasswordNotifier extends StateNotifier<ResetPasswordState> {
 
   checkIfEmailAddressExists(String emailAddress) async {
     try {
-      print("TAG SignIn Method: ${emailAddress}");
 
       // Fetch sign-in methods for the email address
       final list =
           await FirebaseAuth.instance.fetchSignInMethodsForEmail(emailAddress);
-      print("TAG SignIn Method: ${list.toString()}");
       // In case list is not empty
       if (list.isNotEmpty) {
         return true;
@@ -234,11 +235,13 @@ class ResetPasswordNotifier extends StateNotifier<ResetPasswordState> {
     try {
       final signInMethods = await FirebaseAuth.instance
           .fetchSignInMethodsForEmail("$phoneNumber@phone.firebase.com");
-
-      print("TAG SignIn Method: SignIn Methods: $signInMethods");
-      return signInMethods.isNotEmpty;
+      // If signInMethods is not empty, the phone number exists
+      if (signInMethods.isNotEmpty) {
+        return true;
+      } else {
+        return false;
+      }
     } catch (error) {
-      print("TAG SignIn Method: Error checking phone number: $error");
       return false;
     }
   }

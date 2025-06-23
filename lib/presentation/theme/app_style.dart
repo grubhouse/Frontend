@@ -82,6 +82,9 @@ class AppStyle {
   static const Color partnerChatBack = Color(0xFF1A222C);
   static const Color yourChatBack = Color(0xFF25303F);
 
+  // ignore: prefer_typing_uninitialized_variables
+  static var brandColor;
+
   /// font style
 
   static interBold(

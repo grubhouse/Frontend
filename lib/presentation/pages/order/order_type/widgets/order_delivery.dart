@@ -134,7 +134,9 @@ class _OrderDeliveryState extends State<OrderDelivery> {
                 textController: houseController,
                 onChanged: (s) {
                   ref.read(orderProvider.notifier).setAddressInfo(house: s);
-                },
+                }, validator: (value) {
+                  return null;
+                  },
               ),
               16.verticalSpace,
               OutlinedBorderTextField(
@@ -142,7 +144,9 @@ class _OrderDeliveryState extends State<OrderDelivery> {
                 textController: floorController,
                 onChanged: (s) {
                   ref.read(orderProvider.notifier).setAddressInfo(floor: s);
-                },
+                }, validator: (value) {
+                  return null;
+                  },
               ),
               16.verticalSpace,
               OutlinedBorderTextField(
@@ -150,7 +154,9 @@ class _OrderDeliveryState extends State<OrderDelivery> {
                 textController: commentController,
                 onChanged: (s) {
                   ref.read(orderProvider.notifier).setAddressInfo(note: s);
-                },
+                }, validator: (value) {
+                  return null;
+                  },
               ),
               16.verticalSpace,
               Column(
@@ -166,7 +172,9 @@ class _OrderDeliveryState extends State<OrderDelivery> {
                           modal: const PhoneVerify(),
                           isDarkMode: false,
                           paddingTop: MediaQuery.of(context).padding.top);
-                    },
+                    }, validator: (value) {
+                      return null;
+                      },
                   ),
                   16.verticalSpace,
                 ],
@@ -200,7 +208,9 @@ class _OrderDeliveryState extends State<OrderDelivery> {
                           validation: AppValidators.isNotEmptyValidator,
                           onChanged: (s) {
                             ref.read(orderProvider.notifier).setUser(username: s);
-                          },
+                          }, validator: (value) {
+                            return null;
+                            },
                         ),
                       ),
                       16.horizontalSpace,
@@ -213,7 +223,9 @@ class _OrderDeliveryState extends State<OrderDelivery> {
                           validation: AppValidators.isNotEmptyValidator,
                           onChanged: (s) {
                             ref.read(orderProvider.notifier).setUser(phone: s);
-                          },
+                          }, validator: (value) {
+                            return null;
+                            },
                         ),
                       ),
                     ],

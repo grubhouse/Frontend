@@ -165,7 +165,9 @@ class ResetPasswordPage extends ConsumerWidget {
                             ),
                             isError: !state.isSuccess,
                             descriptionText:
-                                AppHelpers.getTranslation(TrKeys.canNotBeEmpty),
+                                AppHelpers.getTranslation(TrKeys.canNotBeEmpty), validator: (value) {
+                                  return null;
+                                  },
                           ),
                       ],
                     ),
