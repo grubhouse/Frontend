@@ -140,7 +140,6 @@ class AuthRepository implements AuthRepositoryFacade {
     required String verifyCode,
   }) async {
     try {
-      print("hello " + verifyCode);
       final client = inject<HttpService>().client(requireAuth: false)
         ..options.connectTimeout = const Duration(seconds: 30);
       final response = await client.get(
@@ -153,7 +152,7 @@ class AuthRepository implements AuthRepositoryFacade {
       debugPrint('==> verify email failure: $e');
       return ApiResult.failure(
           error: (e.runtimeType == DioException)
-              ? ((e as DioException).response?.data["message"] == "Bad request."
+              ? ((e).response?.data["message"] == "Bad request."
                   ? (e.response?.data["params"] as Map).values.first[0]
                   : e.response?.data["message"])
               : "",

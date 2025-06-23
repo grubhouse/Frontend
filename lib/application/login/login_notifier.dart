@@ -1,5 +1,6 @@
+// ignore_for_file: empty_catches
+
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:math';
 import 'package:crypto/crypto.dart';
 import 'package:auto_route/auto_route.dart';
@@ -8,7 +9,6 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:riverpodtemp/domain/iterface/auth.dart';
@@ -21,7 +21,6 @@ import 'package:riverpodtemp/infrastructure/services/app_constants.dart';
 import 'package:riverpodtemp/infrastructure/services/app_helpers.dart';
 import 'package:riverpodtemp/infrastructure/services/app_validators.dart';
 import 'package:riverpodtemp/infrastructure/services/local_storage.dart';
-import 'package:riverpodtemp/infrastructure/services/tr_keys.dart';
 import 'package:riverpodtemp/presentation/routes/app_router.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
@@ -188,8 +187,8 @@ class LoginNotifier extends StateNotifier<LoginState> {
   Future<void> loginWithGoogle(BuildContext context) async {
     try {
       await GoogleSignIn().signOut();
-    } catch (e, s) {
-      print(s);
+    // ignore:used_catch_stack
+    } catch (e) {
     }
     final connected = await AppConnectivity.connectivity();
     if (connected) {
@@ -198,7 +197,6 @@ class LoginNotifier extends StateNotifier<LoginState> {
       try {
         googleUser = await GoogleSignIn().signIn();
       } catch (e) {
-        print("gmail exception $e");
         state = state.copyWith(isLoading: false);
       }
       if (googleUser == null) {
@@ -277,7 +275,7 @@ class LoginNotifier extends StateNotifier<LoginState> {
 
   String generateNonce([int length = 32]) {
     // Define the character set to be used in the nonce
-    final charset =
+    const charset =
         '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-.';
     // Create a secure random number generator
     final random = Random.secure();
@@ -600,4 +598,8 @@ class LoginNotifier extends StateNotifier<LoginState> {
       }
     }
   }
+
+  void setLoginType({required bool isEmailLogin}) {}
+
+  void setPhone(String completeNumber) {}
 }

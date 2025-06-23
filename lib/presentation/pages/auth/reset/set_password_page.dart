@@ -67,7 +67,9 @@ class SetPasswordPage extends ConsumerWidget {
                           descriptionText: state.isPasswordInvalid
                               ? AppHelpers.getTranslation(TrKeys
                               .passwordShouldContainMinimum8Characters)
-                              : null,
+                              : null, validator: (value) {
+                                return null;
+                                },
                         ),
                         34.verticalSpace,
                         OutlinedBorderTextField(
@@ -90,7 +92,9 @@ class SetPasswordPage extends ConsumerWidget {
                           descriptionText: state.isConfirmPasswordInvalid
                               ? AppHelpers.getTranslation(
                               TrKeys.confirmPasswordIsNotTheSame)
-                              : null,
+                              : null, validator: (value) {
+                                return null;
+                                },
                         ),
                       ],
                     ),

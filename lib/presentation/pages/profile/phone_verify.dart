@@ -26,9 +26,7 @@ class PhoneVerify extends ConsumerWidget {
     final state = ref.watch(registerProvider);
     final bool isDarkMode = LocalStorage.getAppThemeMode();
     final bool isLtr = LocalStorage.getLangLtr();
-    var phoneValid = false;
     FirebaseMessaging.instance.getToken().then((token) {
-      print('firebase token: $token');
     });
     return Directionality(
       textDirection: isLtr ? TextDirection.ltr : TextDirection.rtl,
@@ -144,7 +142,9 @@ class PhoneVerify extends ConsumerWidget {
                               descriptionText: state.isEmailInvalid
                                   ? AppHelpers.getTranslation(
                                       TrKeys.emailIsNotValid)
-                                  : null,
+                                  : null, validator: (value) {
+                                    return null;
+                                    },
                             ),
                           ),
                         ],

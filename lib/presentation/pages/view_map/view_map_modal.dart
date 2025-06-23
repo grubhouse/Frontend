@@ -116,7 +116,9 @@ class _ViewMapModalState extends ConsumerState<ViewMapModal> {
                     } else {
                       return null;
                     }
-                  },
+                  }, validator: (value) {
+                    return null;
+                    },
                 ),
                 24.verticalSpace,
                 Row(
@@ -125,7 +127,9 @@ class _ViewMapModalState extends ConsumerState<ViewMapModal> {
                       child: OutlinedBorderTextField(
                         textController: house,
                         label: AppHelpers.getTranslation(TrKeys.house)
-                            .toUpperCase(),
+                            .toUpperCase(), validator: (value) {
+                              return null;
+                              },
                       ),
                     ),
                     24.horizontalSpace,
@@ -133,7 +137,9 @@ class _ViewMapModalState extends ConsumerState<ViewMapModal> {
                       child: OutlinedBorderTextField(
                         textController: floor,
                         label: AppHelpers.getTranslation(TrKeys.floor)
-                            .toUpperCase(),
+                            .toUpperCase(), validator: (value) {
+                              return null;
+                              },
                       ),
                     ),
                   ],

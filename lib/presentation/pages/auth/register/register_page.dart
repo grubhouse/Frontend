@@ -184,7 +184,9 @@ class RegisterPage extends ConsumerWidget {
                           descriptionText: state.isEmailInvalid
                               ? AppHelpers.getTranslation(
                                   TrKeys.emailIsNotValid)
-                              : null,
+                              : null, validator: (value) {
+                                return null;
+                                },
                         ),
                       if (!isOnlyEmail)
                         Column(
@@ -197,7 +199,9 @@ class RegisterPage extends ConsumerWidget {
                                     label: AppHelpers.getTranslation(
                                             TrKeys.phoneNumber)
                                         .toUpperCase(),
-                                    onChanged: event.setPhone,
+                                    onChanged: event.setPhone, validator: (value) {
+                                      return null;
+                                      },
                                   )
                                 : const SizedBox.shrink(),
                             30.verticalSpace,
@@ -213,7 +217,9 @@ class RegisterPage extends ConsumerWidget {
                                             TrKeys.firstname)
                                         .toUpperCase(),
                                     onChanged: (name) =>
-                                        event.setFirstName(name),
+                                        event.setFirstName(name), validator: (value) {
+                                          return null;
+                                          },
                                   ),
                                 ),
                                 SizedBox(
@@ -224,7 +230,9 @@ class RegisterPage extends ConsumerWidget {
                                     label: AppHelpers.getTranslation(
                                             TrKeys.surname)
                                         .toUpperCase(),
-                                    onChanged: (name) => event.setLatName(name),
+                                    onChanged: (name) => event.setLatName(name), validator: (value) {
+                                      return null;
+                                      },
                                   ),
                                 ),
                               ],
@@ -252,7 +260,9 @@ class RegisterPage extends ConsumerWidget {
                               descriptionText: state.isPasswordInvalid
                                   ? AppHelpers.getTranslation(TrKeys
                                       .passwordShouldContainMinimum8Characters)
-                                  : null,
+                                  : null, validator: (value) {
+                                    return null;
+                                    },
                             ),
                             34.verticalSpace,
                             OutlinedBorderTextField(
@@ -279,13 +289,17 @@ class RegisterPage extends ConsumerWidget {
                               descriptionText: state.isConfirmPasswordInvalid
                                   ? AppHelpers.getTranslation(
                                       TrKeys.confirmPasswordIsNotTheSame)
-                                  : null,
+                                  : null, validator: (value) {
+                                    return null;
+                                    },
                             ),
                             30.verticalSpace,
                             OutlinedBorderTextField(
                               label: AppHelpers.getTranslation(TrKeys.referral)
                                   .toUpperCase(),
-                              onChanged: event.setReferral,
+                              onChanged: event.setReferral, validator: (value) {
+                                return null;
+                                },
                             ),
                           ],
                         ),
@@ -299,7 +313,6 @@ class RegisterPage extends ConsumerWidget {
                       onPressed: () {
                         if (isOnlyEmail) {
                           if (event.checkEmail()) {
-                            print("object 6");
                             event.sendCode(context, () {
                               Navigator.pop(context);
                               AppHelpers.showCustomModalBottomSheet(
@@ -325,7 +338,6 @@ class RegisterPage extends ConsumerWidget {
                                 return;
                               }
                             }
-                            print("object 5");
                             event.sendCodeToNumber(context, (s) {
                               Navigator.pop(context);
                               AppHelpers.showCustomModalBottomSheet(
@@ -346,14 +358,11 @@ class RegisterPage extends ConsumerWidget {
                             });
                           }
                         } else {
-                          print("object 2");
                           if (state.verificationId.isEmpty) {
-                            print("object 3");
                             event.register(
                               context,
                             );
                           } else {
-                            print("object 4");
                             event.registerWithPhone(context);
                           }
                         }

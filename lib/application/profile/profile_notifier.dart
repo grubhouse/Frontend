@@ -226,11 +226,11 @@ class ProfileNotifier extends StateNotifier<ProfileState> {
     var fcm="";
     try {
        fcm = await FirebaseMessaging.instance.getToken()??"";
+    // ignore: unused_catch_stack, empty_catches
     } catch (e, s) {
-      print(s);
     }
     log("TAG fcm being received $fcm");
-    _userRepository.logoutAccount(fcm: fcm ?? "");
+    _userRepository.logoutAccount(fcm: fcm);
   }
 
   Future<void> deleteAccount(BuildContext context) async {

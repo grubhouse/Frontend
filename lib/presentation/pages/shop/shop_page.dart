@@ -108,7 +108,9 @@ class _ShopPageState extends ConsumerState<ShopPage>
               16.verticalSpace,
               OutlinedBorderTextField(
                 textController: name,
-                label: AppHelpers.getTranslation(TrKeys.firstname),
+                label: AppHelpers.getTranslation(TrKeys.firstname), validator: (value) {
+                  return null;
+                  },
               ),
               24.verticalSpace,
               Consumer(builder: (contextt, ref, child) {

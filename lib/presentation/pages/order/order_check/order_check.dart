@@ -24,7 +24,6 @@ import 'package:riverpodtemp/presentation/components/buttons/custom_button.dart'
 import 'package:riverpodtemp/presentation/components/web_view.dart';
 import 'package:riverpodtemp/presentation/pages/order/order_check/price_information.dart';
 import 'package:riverpodtemp/presentation/pages/order/order_screen/widgets/image_dialog.dart';
-import 'package:riverpodtemp/presentation/pages/profile/phone_verify.dart';
 import 'package:riverpodtemp/presentation/routes/app_router.dart';
 import 'package:riverpodtemp/presentation/theme/theme.dart';
 import 'package:url_launcher/url_launcher.dart';

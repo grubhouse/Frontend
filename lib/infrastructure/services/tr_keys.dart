@@ -402,4 +402,22 @@ class TrKeys {
       'confirm_password_is_not_the_same';
   static const String errorWithUpdatingPassword =
       'error_with_updating_password';
+
+  static const String areYouSureYouWantToClearBasket =
+      'are_you_sure_you_want_to_clear_basket';
+
+  static const String emailCannotBeEmpty = 
+      'email_cannot_be_empty';
+
+  static String areYouSureYouWantToDelete =
+      'are_you_sure_you_want_to_delete';
+
+  static String phoneCannotBeEmpty =
+      'phone_cannot_be_empty';
+
+  static String areYouSureYouWantToClearYourBasket =
+        'are_you_sure_you_want_to_clear_your_basket';
+
+  static String confirm =
+        'confirm';
 }

@@ -1,9 +1,10 @@
+// ignore_for_file: unused_import
+
 import 'dart:async';
 import 'dart:developer';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_login_facebook/flutter_login_facebook.dart';
@@ -149,8 +150,6 @@ class RegisterNotifier extends StateNotifier<RegisterState> {
             AppHelpers.getTranslation(
                 AppHelpers.getTranslation(e.message ?? "")),
           );
-          print("firebase error message: ${e.message}");
-          print("input value: ${state.email}");
           state = state.copyWith(isLoading: false, isSuccess: false);
         },
         codeSent: (String verificationId, int? resendToken) {

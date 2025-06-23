@@ -116,7 +116,9 @@ class SenderWidget extends StatelessWidget {
                     return null;
                   }
                   return AppHelpers.getTranslation(TrKeys.canNotBeEmpty);
-                },
+                }, validator: (value) {
+                  return null;
+                  },
               ),
               16.verticalSpace,
               OutlinedBorderTextField(
@@ -127,22 +129,30 @@ class SenderWidget extends StatelessWidget {
                     return null;
                   }
                   return AppHelpers.getTranslation(TrKeys.canNotBeEmpty);
-                },
+                }, validator: (value) {
+                  return null;
+                  },
               ),
               16.verticalSpace,
               OutlinedBorderTextField(
                 label: AppHelpers.getTranslation(TrKeys.house),
-                textController: house,
+                textController: house, validator: (value) {
+                  return null;
+                  },
               ),
               16.verticalSpace,
               OutlinedBorderTextField(
                 label: AppHelpers.getTranslation(TrKeys.floor),
-                textController: flour,
+                textController: flour, validator: (value) {
+                  return null;
+                  },
               ),
               16.verticalSpace,
               OutlinedBorderTextField(
                 label: AppHelpers.getTranslation(TrKeys.comment),
-                textController: comment,
+                textController: comment, validator: (value) {
+                  return null;
+                  },
               ),
               24.verticalSpace,
             ],

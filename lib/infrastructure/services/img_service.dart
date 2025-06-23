@@ -37,11 +37,12 @@ abstract class ImgService {
         double fileSizeInMB = fileSizeInBytes / (1024 * 1024); // Convert to MB
 
         if (fileSizeInMB > maxSizeMB) {
+          // ignore: use_build_context_synchronously
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('Image size must be less than $maxSizeMB MB'),
               backgroundColor: Colors.red,
-              duration: Duration(seconds: 3),
+              duration: const Duration(seconds: 3),
             ),
           );
           //onChange.call('Image size must be less than $maxSizeMB MB');

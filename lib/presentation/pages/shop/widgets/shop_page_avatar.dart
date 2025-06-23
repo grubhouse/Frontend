@@ -227,6 +227,7 @@ class ShopPageAvatar extends StatelessWidget {
                             .deleteCart(context)
                             .then((value) async {
                           ref.read(shopOrderProvider.notifier).createCart(
+                                // ignore: use_build_context_synchronously
                                 context,
                                 (shop.id ?? 0),
                               );

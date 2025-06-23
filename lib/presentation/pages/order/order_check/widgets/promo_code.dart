@@ -118,6 +118,9 @@ class _PromoCodeState extends ConsumerState<PromoCodeScreen> {
                             ),
                           )
                         : const SizedBox.shrink(),
+                    validator: (value) {
+                      return null;
+                    },
                   ),
                   146.verticalSpace,
                   Padding(

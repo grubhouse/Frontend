@@ -186,7 +186,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                     .toUpperCase(),
                                 initialText: user?.email ?? "",
                                 validation: AppValidators.emailCheck,
-                                onChanged: event.setEmail,
+                                onChanged: event.setEmail, validator: (value) {
+                                  return null;
+                                  },
                               ),
                               34.verticalSpace,
                               Row(
@@ -206,7 +208,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                           AppValidators.isNotEmptyValidator,
                                       onChanged: (s) {
                                         event.setFirstName(s);
-                                      },
+                                      }, validator: (value) {
+                                        return null;
+                                        },
                                     ),
                                   ),
                                   SizedBox(
@@ -222,7 +226,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                           AppValidators.isNotEmptyValidator,
                                       onChanged: (s) {
                                         event.setLastName(s);
-                                      },
+                                      }, validator: (value) {
+                                        return null;
+                                        },
                                     ),
                                   ),
                                 ],
@@ -244,7 +250,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                       paddingTop:
                                           MediaQuery.paddingOf(context).top
                                   );
-                                },
+                                }, validator: (value) {
+                                  return null;
+                                  },
                               ),
                               34.verticalSpace,
                               OutlinedBorderTextField(
@@ -291,7 +299,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                                     .toUpperCase(),
                                 hint: "YYYY-MM-DD",
                                 validation: AppValidators.isNotEmptyValidator,
-                                textController: birthDay,
+                                textController: birthDay, validator: (value) {
+                                  return null;
+                                  },
                               ),
                               34.verticalSpace,
                               UnderlineDropDown(

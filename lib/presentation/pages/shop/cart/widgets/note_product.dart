@@ -42,7 +42,9 @@ class _NoteProductState extends State<NoteProduct> {
         OutlinedBorderTextField(
           readOnly: !widget.isSave,
           textController: controller,
-          label: AppHelpers.getTranslation(TrKeys.comment).toUpperCase(),
+          label: AppHelpers.getTranslation(TrKeys.comment).toUpperCase(), validator: (value) {
+            return null;
+            },
         ),
         32.verticalSpace,
         if (widget.isSave)
