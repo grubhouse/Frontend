@@ -53,7 +53,7 @@ class AppConstants {
   /// api urls
   static const String drawingBaseUrl = 'https://api.openrouteservice.org';
   // static const String baseUrl = 'https://api.foodyman.org';
-  static const String baseUrl = 'https://api.grubhouse.co.uk';
+  static const String baseUrl = 'https://api2.grubhouse.co.uk';
   static const String googleApiKey = 'AIzaSyDZQUsmwnkCmD3HMNFCABo8YSE54FCTFYo';
   static const String privacyPolicyUrl = '$baseUrl/privacy-policy';
   static const String adminPageUrl = 'https://admin.grubhouse.co.uk';
